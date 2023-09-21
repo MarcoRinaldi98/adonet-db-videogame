@@ -73,8 +73,10 @@ while (true)
                 Console.WriteLine($"Ecco la lista dei videogiochi che contengono \"{stringToSearch}\" nel nome:");
                 for (int i = 0; i < videogames.Count; i++)
                 {
-                    Console.WriteLine($"- {i + 1}");
-                    Console.WriteLine($"{videogames[i]}");
+                    Console.WriteLine(@$"
+- {i + 1}:
+{videogames[i]}
+                    ");
                 }
             } else
             {
@@ -106,6 +108,5 @@ while (true)
         default:
             Console.WriteLine("Non hai selezionato un opzione valida!");
             break;
-
     }
 }

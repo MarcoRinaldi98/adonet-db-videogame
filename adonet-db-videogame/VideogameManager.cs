@@ -78,11 +78,11 @@ namespace adonet_db_videogame
                 try
                 {
                     connection.Open();
-                    string query = "SELECT id, name, overview, release_date, software_house_id FROM videogames WHERE name LiKE  '%@Name%';";
+                    string query = "SELECT id, name, overview, release_date, software_house_id FROM videogames WHERE name LIKE @Name;";
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-                        cmd.Parameters.Add(new SqlParameter("@Name", stringToSearch));
+                        cmd.Parameters.Add(new SqlParameter("@Name", $"%{stringToSearch}%"));
                         using (SqlDataReader data = cmd.ExecuteReader())
                         {
                             while (data.Read())
