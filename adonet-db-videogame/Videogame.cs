@@ -12,7 +12,7 @@ namespace adonet_db_videogame
         public string Name { get; private set; }
         public string Overview { get; private set; }
         public DateTime ReleaseDate { get; private set; }
-        public long SoftwareHouyseId { get; private set; }
+        public long SoftwareHouseId { get; private set; }
 
         public Videogame(long id, string name, string overview, DateTime releaseDate, long softwareHouseId)
         {
@@ -20,7 +20,7 @@ namespace adonet_db_videogame
             this.Name = name;
             this.Overview = overview;
             this.ReleaseDate = releaseDate;
-            this.SoftwareHouyseId = softwareHouseId;
+            this.SoftwareHouseId = softwareHouseId;
         }
 
         public override string ToString()

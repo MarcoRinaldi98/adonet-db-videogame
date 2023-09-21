@@ -19,7 +19,30 @@ while (true)
     switch (selectedOption)
     {
         case 1:
-            
+            Console.WriteLine("Inserisci i dati del videogioco: ");
+            Console.Write("Inserisci il nome del videogioco: ");
+            string name = Console.ReadLine();
+
+            Console.Write("Inserisci la descrizione del videogioco: ");
+            string description = Console.ReadLine();
+
+            Console.Write("Inserisci la data di rilascio del videogioco (dd/mm/yyyy): ");
+            DateTime releaseDate = DateTime.Parse(Console.ReadLine());
+
+            Console.Write("Inserisci l'ID della Software House del videogioco: ");
+            long softwareHouseId = long.Parse(Console.ReadLine());
+
+            Videogame newVideogame = new Videogame(0, name, description, releaseDate, softwareHouseId);
+            bool inserted = VideogameManager.InsertVideogame(newVideogame);
+
+            if (inserted)
+            {
+                Console.WriteLine("Il nuovo videogioco è stato aggiunto!");
+            }
+            else
+            {
+                Console.WriteLine("Videogioco non inserito!");
+            }
             break;
 
         case 2:
