@@ -63,8 +63,24 @@ while (true)
             break;
 
         case 3:
-            
+            Console.Write("Inserisci la stringa: ");
+            string stringToSearch = Console.ReadLine();
 
+            List<Videogame> videogames = VideogameManager.GetVideogamesWithString(stringToSearch);
+
+            if (videogames.Count > 0)
+            {
+                Console.WriteLine($"Ecco la lista dei videogiochi che contengono \"{stringToSearch}\" nel nome:");
+                for (int i = 0; i < videogames.Count; i++)
+                {
+                    Console.WriteLine($"- {i + 1}");
+                    Console.WriteLine($"{videogames[i]}");
+                }
+            } else
+            {
+                Console.WriteLine($"Non ci sono videogiochi che contengono \"{stringToSearch}\" nel nome!");
+            }          
+            Console.WriteLine();
             break;
 
         case 4:
