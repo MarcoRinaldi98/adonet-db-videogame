@@ -46,8 +46,20 @@ while (true)
             break;
 
         case 2:
-            
+            Console.Write("Inserisci l'id del videogioco da cercare: ");
+            long idToSearch = long.Parse(Console.ReadLine());
 
+            Videogame videogameSerched = VideogameManager.GetVideogameById(idToSearch);
+
+            if(videogameSerched == null)
+            {
+                Console.WriteLine($"Il videogioco con ID {idToSearch} non esiste!");
+            } else
+            {
+                Console.WriteLine($"Il videogioco con ID {idToSearch} è: ");
+                Console.WriteLine($"- {videogameSerched}");
+            }
+            Console.WriteLine();
             break;
 
         case 3:

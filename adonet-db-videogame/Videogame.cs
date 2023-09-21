@@ -28,7 +28,7 @@ namespace adonet_db_videogame
             return @$"
 Nome: {Name};
 Descrizione: {Overview};
-Data di rilascio: {ReleaseDate.ToString()};
+Data di rilascio: {ReleaseDate};
             ";
         }
     }
