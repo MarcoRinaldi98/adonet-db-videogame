@@ -100,7 +100,7 @@ while (true)
             break;
 
         case 5:
-            
+            Environment.Exit(0);
             break;
 
         default:
